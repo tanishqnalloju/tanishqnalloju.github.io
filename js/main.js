@@ -74,7 +74,7 @@
     * ------------------------------------------------------ */
     const ssFinalCountdown = function() {
 
-        const finalDate = '2020/09/30';
+        const finalDate = '2021/04/15';
 
         $('.counter').countdown(finalDate)
         .on('update.countdown finish.countdown', function(event) {
