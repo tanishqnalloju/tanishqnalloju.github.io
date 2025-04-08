@@ -1,725 +1,276 @@
 <!DOCTYPE html>
-<html class="js svg audio canvas cssremunit csscalc cssgradients supports no-touchevents video cssanimations cssfilters flexbox flexboxlegacy no-flexboxtweener flexwrap csstransforms csstransforms3d csstransitions backgroundblendmode ss-loaded" lang="en" style="" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36 Edg/87.0.664.75"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venkata Sai Tanishq Nalloju Portfolio</title>
+    <link rel="stylesheet" href="../static/styles.css" />
+    <script type="module" src="../static/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Playfair+Display:wght@400&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a id="resumeOverlay" aria-label="Resume">
+              <img
+                src="static/file.svg"
+                alt="Resume File"
+                style="line-height: 1; color: var(--white);"
+                width="18"
+                height="18"
+              /> Resume
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/tanishqnalloju" target="_blank" aria-label="GitHub">
+              <img
+                src="static/github.svg"
+                alt="GitHub Icon"
+                style="line-height: 1; color: var(--white);"
+                width="32"
+                height="32"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="https://in.linkedin.com/in/tanishqnalloju" target="_blank" aria-label="LinkedIn">
+              <img
+                src="static/linkedin.svg"
+                alt="LinkedIn Icon"
+                style="line-height: 1; color: var(--white);"
+                width="32"
+                height="32"
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="hamburger">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </div>
+    </header>
 
-    <!--- basic page needs
-    ================================================== -->
-    
-    <title>Venkata Sai Tanishq Nalloju</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- mobile specific metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="./Scripts/base.css">
-    <link rel="stylesheet" href="./Scripts/main.css">
-    <link rel="stylesheet" href="./Scripts/vendor.css">
-
-    <!-- script
-    ================================================== -->
-    <script src="./Scripts/modernizr.js"></script>
-
-
-    <!-- favicons
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/icon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/icon.png">
-    <link rel="manifest" href="site.webmanifest">
-
-</head>
-
-<body id="top" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-delay="300">
-
-
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader" style="display: none;">
-        <div id="loader" class="dots-fade" style="display: none;">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+    <div class="mobile-nav">
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <!-- <a href="static/VenkataSaiTanishqNalloju.pdf" aria-label="Resume">
+            <img
+              src="static/file.svg"
+              alt="Resume File"
+              style="line-height: 1; color: var(--white);"
+              width="18"
+              height="18"
+            /> Resume
+          </a> -->
+          <a href="static/VenkataSaiTanishqNalloju.pdf" download="Venkata Sai Tanishq Nalloju.pdf"> <img
+            src="static/file.svg"
+            alt="Resume File"
+            style="line-height: 1; color: var(--white);"
+            width="18"
+            height="18"
+          /> Resume</a>
+        </li>
+        <li>
+          <a href="https://github.com/tanishqnalloju" target="_blank" aria-label="GitHub">
+            <img
+              src="static/github.svg"
+              alt="GitHub Icon"
+              style="line-height: 1; color: var(--white);"
+              width="32"
+              height="32"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="https://in.linkedin.com/in/tanishqnalloju" target="_blank" aria-label="LinkedIn">
+            <img
+              src="static/linkedin.svg"
+              alt="LinkedIn Icon"
+              style="line-height: 1; color: var(--white);"
+              width="32"
+              height="32"
+            />
+          </a>
+        </li>
+      </ul>
     </div>
 
+    <div id="hero" class="hero">
+      <div class="hero-content">
+        <h1>Venkata Sai Tanishq Nalloju<br /></h1>
+        <p>Technical product manager with 4+ years of experience in AI and cloud. Led PoC, PoT & AI-driven innovations in
+healthcare, optimizing workflows & decision-making. Achievements include managing cross-functional teams to
+develop Swarm AI solutions that improved task efficiency by 70%.
+</p>
+        <a href="#experience"><button>Explore More</button></a>
+      </div>
+      <div class="scroll-down-indicator">&#8964;</div>
+    </div>
 
-    <!-- header
-    ================================================== -->
-    <header class="s-header sticky offset scrolling">
-
-        <div class="header-logo">
-            <a href="./index.html">
-                <img src="./images/icon.png" alt="Homepage">
-            </a>
+    <div id="pdfOverlay" class="modal-overlay">
+      <div class="modal">
+        <!-- <a href="static/VenkataSaiTanishqNalloju.pdf" download class="download-button-top" aria-label="Download Resume">
+          &#11123;
+        </a> -->
+        <span class="close-button" id="closePdfOverlay">&times;</span>
+        <div class="pdf-container">
+          <embed id="pdfViewer" src="static/VenkataSaiTanishqNalloju.pdf#toolbar=0&navpanes=0&scrollbar=1&zoom=scale,100" type="application/pdf" width="100%" height="100%">
         </div>
-
-        <div class="header-content">
-    
-            <nav class="row header-nav-wrap">
-                <ul class="header-nav">
-                    <li><a class="smoothscroll" href="#home" title="Intro">Home</a></li>
-                    <li><a class="smoothscroll" href="#about" title="About">About</a></li>
-                    <li><a class="smoothscroll" href="#skills" title="Experience">Skills</a></li>
-					<li><a class="smoothscroll" href="#volunteer" title="Volunteer">Volunteer</a></li>
-                    <li><a class="smoothscroll" href="#works" title="Works">Works</a></li>
-<!--                    <li><a href="mailto:tanishq.nalloju@gmail.com?cc=tanishqnrao@gmail.com&subject=Mail from the site" title="Contact us">Say Hello</a></li>-->
-					<li><a href="#contact" title="Contact us">Say Hello</a></li>
-                </ul>
-            </nav> <!-- end header-nav-wrap -->
-
-            <a href="https://github.com/tanishqnalloju/tanishqnalloju.github.io/blob/master/Venkata_Sai%20Tanishq%20Nalloju_Resume_Personal.pdf" class="btn btn--stroke btn--small">Resume</a>
-			
-			<a href="https://github.com/tanishqnalloju/tanishqnalloju.github.io/blob/master/Venkata_Sai%20Tanishq%20Nalloju_Resume_Personal.pdf" class="btn btn--stroke btn--small cv">CV</a>
-
-        </div> <!-- end header-content -->
-
-        <a class="header-menu-toggle" href="./index.html"><span>Menu</span></a>
-
-    </header> 
-
-
-    <!-- hero
-    ================================================== -->
-    <section id="home" class="s-hero target-section" data-parallax="scroll" data-natural-width="3000" data-natural-height="2000" data-position-y="center">
-
-        <div class="row hero-content">
-
-            <div class="column large-full">
-
-                <h1>
-                Hello, I'm Venkata Sai Tanishq Nalloju, <br>
-                a Computer Science grad <br>
-                &amp; intern currently <br>
-                based India.
-                </h1>
-
-                <ul class="hero-social">
-                    <li>
-                        <a href="https://www.linkedin.com/in/tanishqnalloju/" title="">LinkedIn</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/tanishqnalloju" title="">Github</a>
-                    </li>
-                    
-                </ul> <!-- end hero-social -->
-
-            </div> 
-
-        </div> <!-- end hero-content -->
-
-        <div class="hero-scroll">
-            <a href="#about" class="scroll-link smoothscroll">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 24l-8-9h6v-15h4v15h6z"></path></svg>
-            </a>
-        </div> <!-- end hero-scroll -->
-
-    </section> <!-- end s-hero -->
-
-
-    <!-- about
-    ================================================== -->
-    <section id="about" class="s-about target-section">
-
-        <div class="s-about__section s-about__section--profile">
-
-            <div class="right-vert-line"></div>
-
-            <div class="row">
-                <div class="column large-6 medium-8 tab-full">
-
-                    <div class="section-intro aos-init aos-animate" data-num="01" data-aos="fade-up">
-                        <h3 class="subhead">About Me</h3>
-                        <h1 class="display-1">I'm the kind of person who isn't afraid of challenges.</h1>
-                    </div>
-
-
-                    <h3 data-aos="fade-up" class="aos-init aos-animate">Profile</h3>
-
-                    <p data-aos="fade-up" class="aos-init aos-animate">
-                    I'm a developer and enthusiast who loves to work on
-					emerging technology and tools. I love challenges, curiousity that drives me, and versatility. I'm good at handling critical problems and solving them in a fast-paced environment. 
-					<br> <br/>
-					 I'm looking forward with working passionate developers and companies that try to make a difference in the world. Feels great to be a part of change for better. I'm more inclined towards business roles that can leverage my technical skills. Would definitely like to try different roles. Looking forward to change the world with my fellow earthlings.
-
-                    </p>
-
-                </div>
-            </div>
-
-        </div> <!-- end s-about__section--profile -->
-
-        <div class="s-about__section">
-
-            <div class="row">
-                <div class="column">
-                    <h3 data-aos="fade-up" class="aos-init aos-animate">Career</h3>
-                </div>
-            </div>
-
-            <div class="row block-large-1-2 block-900-full work-positions">
-
-                <div class="column aos-init aos-animate" data-aos="fade-up">
-                    <div class="position">
-                        <div class="position__header">
-                            <h6>
-                                <span class="position__co">Empower XYZ</span>
-                                <span class="position__pos">Intern</span>
-                            </h6>
-                            <div class="position__timeframe">
-                                October 2020 - Present
-                            </div>
-                        </div>
-
-                        <p>
-                        Worked in Cross-functional teams across the company. Tested endpoints and UI functionality across products. Fixed multiple  UI Vulnerabilities and bugs. Worked on SAP platform based products with Cloud Integration.
-						<br> <br />
-						Market and Product Research on products using emerging technologies. Architecting and designing basic POC's for products. Worked on Blockchain ideation and Future Concepts.
-                        </p>
-                    </div>
-                </div> <!-- end column -->
-                
-
-            </div> <!-- work positions -->
-
-        </div> <!-- end s-about__section -->
-
-    </section> <!-- end s-about -->
-
-
-    <!-- Skills
-    ================================================== -->
-    <section id="skills" class="s-services target-section h-dark-bg">
-        
-        <div class="row s-services__content">
-
-            <div class="vert-line"></div>
-
-            <div class="column large-6 s-services__leftcol">
-                <div class="section-intro aos-init aos-animate" data-num="02" data-aos="fade-up">
-                    <h3 class="subhead">Skills</h3>
-
-                    <h1 class="display-1">
-                    I focus on wide array of tools and technologies. Love to explore new tools and try new stuff.
-                    </h1>
-                </div>
-
-                <p class="lead aos-init aos-animate" data-aos="fade-up">
-                Curiosity drives me while the adrenalin kicks my butt to explore new areas of interest. Always exploring for opportunities that suit me and
-					help me grow as a developer.
-                </p>
-            </div> <!-- end  s-services--leftcol -->
-
-            <div class="column large-6">
-                <ul class="services-list aos-init aos-animate" data-aos="fade-up">
-                    <li class="services-list__item is-active">
-                        <div class="services-list__item-header">
-                            <h5>Proficient</h5>
-                        </div>
-                        <div class="services-list__item-body">
-                            <p>
-                            	&#x26AA; Python <br>
-								&#x26AA; C/C++ <br>
-								&#x26AA; Java <br>
-								&#x26AA; API Development <br>
-								
-                            </p>
-                        </div>
-                    </li> <!-- services-list__item -->
-                    <li class="services-list__item">
-                        <div class="services-list__item-header">
-                            <h5>Familiar</h5>
-                        </div>
-                        <div class="services-list__item-body">
-                            <p>
-                            	&#x26AA; Swift <br>
-								&#x26AA; Rust + WASM <br>
-								&#x26AA; Julia <br>
-												
-                            </p>
-                        </div>
-                    </li> <!-- services-list__item -->
-                    <li class="services-list__item">
-                        <div class="services-list__item-header">
-                            <h5>Frontend Development</h5>
-                        </div>
-                        <div class="services-list__item-body" style="display: none;">
-                            <p>
-                            	&#x26AA; HTML + CSS + JQuery<br>
-								&#x26AA; SCSS + BootStrap <br>
-								&#x26AA; JS + NodeJS <br>
-								&#x26AA; VueJS <br>
-								&#x26AA; FeathersJS <br>							
-                            </p>
-                        </div>
-                    </li> <!-- services-list__item -->
-                    <li class="services-list__item">
-                        <div class="services-list__item-header">
-                            <h5>Databases</h5>
-                        </div>
-                        <div class="services-list__item-body" style="display: none;">
-                            <p>
-                            	&#x26AA; MySQL(RDBMS) <br>
-								&#x26AA; MongoDB(NoSQL) <br>
-								&#x26AA; Neo4j(Graph Database) <br>
-                            </p>
-                        </div>
-                    </li> <!-- services-list__item -->
-					<li class="services-list__item">
-                        <div class="services-list__item-header">
-                            <h5>Cloud Tools</h5>
-                        </div>
-                        <div class="services-list__item-body" style="display: none;">
-                            <p>
-                            	&#x26AA; AWS Lambda + API Gateway + S3 + DynamoDB <br>
-								&#x26AA; GCP Cloud Run + BigQuery + Cloud SQL + Compute Engine <br>
-								&#x26AA; Azure Machine Learning + Virtual Machines + Azure SQL <br>
-                            </p>
-                        </div>
-                    </li> <!-- services-list__item -->
-                    <li class="services-list__item">
-                        <div class="services-list__item-header">
-                            <h5>Frameworks</h5>
-                        </div>
-                        <div class="services-list__item-body" style="display: none;">
-                            <p>
-                            	&#x26AA; Flask <br>
-								&#x26AA; Selenium Web Driver(UI Testing/Automation) <br>
-								&#x26AA; Hadoop <br>
-								&#x26AA; Maven + JUnit <br>
-								&#x26AA; PySimpleGUI <br>
-								&#x26AA; Flutter(Dart) <br>
-								&#x26AA; Rocket <br>
-                            </p>
-                        </div>
-                    </li> <!-- services-list__item -->
-                    <li class="services-list__item">
-                        <div class="services-list__item-header">
-                            <h5>Platforms</h5>
-                        </div>
-                        <div class="services-list__item-body" style="display: none;">
-                            <p>
-                            	&#x26AA; *nix <br>
-								&#x26AA; Windows + WSL <br>
-								&#x26AA; Docker + Vagrant <br>
-                            </p>
-                        </div>
-                    </li> <!-- services-list__item -->
-                </ul> <!-- end services-list -->
-            </div>
-
-        </div> <!-- s-services__content -->
-
-    </section> <!-- end s-services -->
-
-    <!-- Extra Curricular
-    ================================================== -->
-    <section id="volunteer" class="s-about target-section">
-
-        <div class="s-about__section s-about__section--profile">
-
-            <div class="right-vert-line"></div>
-
-            <div class="row">
-                <div class="column large-6 medium-8 tab-full">
-
-                    <div class="section-intro aos-init aos-animate" data-num="03" data-aos="fade-up">
-                        <h3 class="subhead">Volunteer Experience</h3>
-                        <h1 class="display-1">I Explore and Discover.</h1>
-                    </div>
-					
-				<div class="row block-large-1-2 block-900-full work-positions">
-
-                <div class="column aos-init aos-animate" data-aos="fade-up">
-                    <div class="position">
-                        <div class="position__header">
-                            <h6>
-                                <span class="position__co">Peer Mentor (Teaching Assistant)</span>
-                            </h6>
-                            <div class="position__timeframe">
-                                June 2018 - March 2020
-                            </div>
-                        </div>
-
-                        <p>
-                        Taught and mentored peers and juniors in Competitive Coding. Introduced C++(STL) &amp; basics of programming to Freshman.
-                        </p>
-                    </div>
-                </div> <!-- end column -->
-				
-				<div class="column aos-init aos-animate" data-aos="fade-up">
-                    <div class="position">
-                        <div class="position__header">
-                            <h6>
-                                <span class="position__co">Software Engineering Associates</span>
-                                <span class="position__pos">President &amp; Member</span>
-                            </h6>
-                            <div class="position__timeframe">
-                                August 2020 - Present
-                            </div>
-                        </div>
-
-                        <p>
-                        Participated actively as a member in the club. Lead &amp; architected projects in the club. Improving member experience and intiatives. Lead events and programs enriching the club's portfolio.
-                        </p>
-                    </div>
-                </div> <!-- end column -->
-				
-				
-                
-
-            </div> <!-- work positions -->
-					
-
-                </div>
-            </div>
-
-        </div> <!-- end s-about__section--profile -->
-
-        <div class="s-about__section">
-
-
-            <div class="row block-large-1-2 block-900-full work-positions">
-
-                         
-
-
-                <div class="column aos-init aos-animate" data-aos="fade-up">
-                    <div class="position">
-                        <div class="position__header">
-                            <h6>
-                                <span class="position__co">Swecha KLU/GLUG</span>
-                                <span class="position__pos">Volunteer &amp; Member</span>
-                            </h6>
-                            <div class="position__timeframe">
-                                January 2020 - Present
-                            </div>
-                        </div>
-
-                        <p>
-                        Participated actively as a member in the club. Worked in mutiple in-house open source projects. Worked on RFID Logbook Integration, Sentiment Analysis on tweets using transfer learning, and more. Participated in sprints and POC's.
-                        </p>
-                    </div>
-                </div> <!-- end column -->
-                
-
-
-                <div class="column aos-init aos-animate" data-aos="fade-up">
-                    <div class="position">
-                        <div class="position__header">
-                            <h6>
-                                <span class="position__co">Crio.do</span>
-                                <span class="position__pos">TA &amp; Participant</span>
-                            </h6>
-                            <div class="position__timeframe">
-                                November 2019 - February 2020
-                            </div>
-                        </div>
-
-                        <p>
-                        Participated in Crio.do programs. Achieved all badges in Crio Tryouts(QEats). QEats is a Eatery order and delivery app with APIs using Django and Android for Front End.
-                        </p>
-                    </div>
-                </div> <!-- end column -->
-                
-
-                <div class="column aos-init aos-animate" data-aos="fade-up">
-                    <div class="position">
-                        <div class="position__header">
-                            <h6>
-                                <span class="position__co">Hackathons</span>
-<!--                                <span class="position__pos">Participant</span>-->
-                            </h6>
-                            <div class="position__timeframe">
-                                November 2018 - Present
-                            </div>
-                        </div>
-
-                        <p>
-                        Participated in mulitple Hackathons in university. Worked on Prototyping and realizable solutions for problems. I like hackathons for the reason that I learn something new there and enjoy the experience of building it.
-                        </p>
-                    </div>
-                </div> <!-- end column -->
-
-
-                <div class="column aos-init aos-animate" data-aos="fade-up">
-                    <div class="position">
-                        <div class="position__header">
-                            <h6>
-                                <span class="position__co">ACM Member</span>
-<!--                                <span class="position__pos">TA &amp; Participant</span>-->
-                            </h6>
-                            <div class="position__timeframe">
-                                August 2019 - Present
-                            </div>
-                        </div>
-
-                        <p>
-                        An active member of the ACM community. Part of the Student Chapter in University during my undergraduation.
-                        </p>
-                    </div>
-                </div> <!-- end column -->
-                
-
-            </div> <!-- work positions -->
-
-        </div> <!-- end s-about__section -->
-
-    </section> <!-- end s-about -->	
-
-
-
-    <!-- portfolio
-    ================================================== -->
-    <section id="works" class="s-portfolio target-section">
-
-        <div class="row s-portfolio__header">
-            <div class="column large-6 medium-8 tab-full">
-                <div class="section-intro aos-init aos-animate" data-num="04" data-aos="fade-up">
-                    <h3 class="subhead">Portfolio</h3>
-                    <h1 class="display-1">
-                        A selection of recent projects I have worked on.
-                    </h1>
-					<h1>
-						Coming Soon
-					</h1>
-                </div>
-            </div>
-        </div> <!-- s-porfolio__header -->
-
-        <div class="row s-porfolio__list block-large-1-2 block-tab-full collapse">
-
-<!--
-            <div class="column aos-init aos-animate" data-aos="fade-up">
-                <div class="folio-item">
-                    <div class="folio-item__thumb">
-                        <a class="folio-item__thumb-link" href="images/portfolio/gh.png" title="Project Image Title" data-size="1050x700">
-                            <img src="images/portfolio/gh.png" srcset="images/portfolio/gh.png 1x, images/portfolio/gh@2x.png 2x" alt="">
-                        </a>
-                    </div>
-                    <div class="folio-item__info">
-                        <div class="folio-item__cat">Product Design</div>
-                        <h4 class="folio-item__title">Project 1</h4>
-                    </div>
-                    <a href="github.com/tanishqnalloju" title="Project Link" class="folio-item__project-link">Project Link</a>
-                    <div class="folio-item__caption">
-                        <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                    </div>
-                </div>
-            </div>  end column 
--->
-<!--
-            <div class="column aos-init aos-animate" data-aos="fade-up">
-                <div class="folio-item">
-                    <div class="folio-item__thumb">
-                        <a class="folio-item__thumb-link" href="images/portfolio/gh.png" title="Project Image Title" data-size="1050x700">
-                            <img src="images/portfolio/gh.png" srcset="images/portfolio/gh.png 1x, images/portfolio/gh@2x.png 2x" alt="">
-                        </a>
-                    </div>
-                    <div class="folio-item__info">
-                        <div class="folio-item__cat">Product Design</div>
-                        <h4 class="folio-item__title">Project 2</h4>
-                    </div>
-                    <a href="github.com/tanishqnalloju" title="Project Link" class="folio-item__project-link">Project Link</a>
-                    <div class="folio-item__caption">
-                        <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                    </div>
-                </div>
-            </div>  end column 
--->
-<!--
-            <div class="column aos-init aos-animate" data-aos="fade-up">
-                <div class="folio-item">
-                    <div class="folio-item__thumb">
-                        <a class="folio-item__thumb-link" href="images/portfolio/gh.png" title="Project Image Title" data-size="1050x700">
-                            <img src="images/portfolio/gh.png" srcset="images/portfolio/gh.png 1x, images/portfolio/gh@2x.png 2x" alt="">
-                        </a>
-                    </div>
-                    <div class="folio-item__info">
-                        <div class="folio-item__cat">Product Design</div>
-                        <h4 class="folio-item__title">Project 3</h4>
-                    </div>
-                    <a href="github.com/tanishqnalloju" title="Project Link" class="folio-item__project-link">Project Link</a>
-                    <div class="folio-item__caption">
-                        <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                    </div>
-                </div>
-            </div>  end column 
--->
-<!--
-            <div class="column aos-init aos-animate" data-aos="fade-up">
-                <div class="folio-item">
-                    <div class="folio-item__thumb">
-                        <a class="folio-item__thumb-link" href="images/portfolio/gh.png" title="Project Image Title" data-size="1050x700">
-                            <img src="images/portfolio/gh.png" srcset="images/portfolio/gh.png 1x, images/portfolio/gh@2x.png 2x" alt="">
-                        </a>
-                    </div>
-                    <div class="folio-item__info">
-                        <div class="folio-item__cat">Product Design</div>
-                        <h4 class="folio-item__title">Project 4</h4>
-                    </div>
-                    <a href="github.com/tanishqnalloju" title="Project Link" class="folio-item__project-link">Project Link</a>
-                    <div class="folio-item__caption">
-                        <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                    </div>
-                </div>
-            </div>  end column 
--->
-<!--
-            <div class="column aos-init aos-animate" data-aos="fade-up">
-                <div class="folio-item">
-                    <div class="folio-item__thumb">
-                        <a class="folio-item__thumb-link" href="images/portfolio/gh.png" title="Project Image Title" data-size="1050x700">
-                            <img src="images/portfolio/gh.png" srcset="images/portfolio/gh.png 1x, images/portfolio/gh@2x.png 2x" alt="">
-                        </a>
-                    </div>
-                    <div class="folio-item__info">
-                        <div class="folio-item__cat">Product Design</div>
-                        <h4 class="folio-item__title">Project 5</h4>
-                    </div>
-                    <a href="github.com/tanishqnalloju" title="Project Link" class="folio-item__project-link">Project Link</a>
-                    <div class="folio-item__caption">
-                        <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                    </div>
-                </div>
-            </div>  end column 
--->
-<!--
-            <div class="column aos-init aos-animate" data-aos="fade-up">
-                <div class="folio-item">
-                    <div class="folio-item__thumb">
-                        <a class="folio-item__thumb-link" href="images/portfolio/gh.png" title="Project Image Title" data-size="1050x700">
-                            <img src="images/portfolio/gh.png" srcset="images/portfolio/gh.png 1x, images/portfolio/gh@2x.png 2x" alt="">
-                        </a>
-                    </div>
-                    <div class="folio-item__info">
-                        <div class="folio-item__cat">Product Design</div>
-                        <h4 class="folio-item__title">Project 6</h4>
-                    </div>
-                    <a href="github.com/tanishqnalloju" title="Project Link" class="folio-item__project-link">Project Link</a>
-                    <div class="folio-item__caption">
-                        <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                    </div>
-                </div>
-            </div>  end column 
--->
-
-        </div> <!-- folio-list -->
-
-    </section> <!-- end portfolio -->
-
-
-	<!-- footer
-    ================================================== -->
-    <footer id="contact" class="s-footer h-dark-bg">
-        
-        <div class="right-vert-line"></div>
-
-        <div class="row s-footer__main">
-            <div class="column large-6">
-                <div class="section-intro aos-init aos-animate" data-aos="fade-up">
-                    <h3 class="subhead">Get In Touch</h3>
-
-                    <h1 class="display-1">
-                    Have an idea or a concept that really excite you?
-                    Let's turn that idea into reality. Shoot me a message.
-                    </h1>
-                </div>
-
-                <div class="footer-email-us">
-                    <a href="mailto:tanishq.nalloju@gmail.com?cc=tanishqnrao@gmail.com&subject=Mail from the site" class="btn btn--primary h-full-width">Let's Talk</a>
-                </div>
-            </div>
-
-            <div class="column large-5">
-                <div class="footer-contacts">
-                    <div class="footer-contact-block aos-init aos-animate" data-aos="fade-up">
-                        <h5 class="footer-contact-block__header">
-                            Email
-                        </h5>
-                        <p class="footer-contact-block__content">
-                            <a href="mailto:tanishq.nalloju@gmail.com?cc=tanishqnrao@gmail.com&subject=Mail from the site">tanishq.nalloju@gmail.com</a>
-							<br>
-							<a href="mailto:tanishqnrao@gmail.com">tanishqnrao@gmail.com</a>
-                        </p>
-                    </div> <!-- end footer-contact-block -->
-                    
-                    <br>
-                    <div class="footer-contact-block aos-init aos-animate" data-aos="fade-up">
-                        <h5 class="footer-contact-block__header">
-                            Social
-                        </h5>
-                        <ul class="footer-contact-block__list">
-                            <li><a href="https://www.linkedin.com/in/tanishqnalloju/">LinkedIn</a></li>
-                            <li><a href="https://github.com/tanishqnalloju">Github</a></li>
-                        </ul>
-                    </div> <!-- end footer-contact-block -->
-                </div>
-            </div>
-        </div> <!-- end s-footer__main -->
-
-        <div class="row s-footer__bottom">
-            <div class="column large-full ss-copyright">
-                <span>© Copyright Venkata Sai Tanishq Nalloju 2021</span> 
-                <span>Design by <a href="https://github.com/tanishqnalloju">Venkata Sai Tanishq Nalloju</a></span>
-            </div> <!-- end ss-copyright -->
-
-            <div class="ss-go-top link-is-visible">
-                <a class="smoothscroll" title="Back to Top" href="./index.html#top">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0l8 9h-6v15h-4v-15h-6z"></path></svg>
+        <!-- <a id="downloadLink" href="static/VenkataSaiTanishqNalloju.pdf" download class="download-button">Download PDF</a> -->
+      </div>
+    </div>
+
+    <div id="modalOverlay" class="modal-overlay">
+      <div id="modal" class="modal">
+        <p id="modalMessage">Your email client will now open with a pre-filled message.</p>
+        <button id="modalCloseBtn">Close</button>
+      </div>
+    </div>
+
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+      <div class="card-container">
+          
+          <div class="card">
+              <h3>Technical Product Manager (R&D)</h3>
+              <p class="company-dates">Brazil(Remote)</p>
+              <p class="company-dates"> | May 2022 - Present</p>
+              <ul>
+                  
+                  <li>Defined technical product vision, aligning features with user needs and market opportunities, which minimized critical bugs (decreased by 40%) and improved platform stability</li>
+                  
+                  <li>Delivered a low-code platform for Agentic AI development, empowering product teams to rapidly prototype and iterate on business workflows, resulting in 50% faster time to completion.</li>
+                  
+                  <li>Led the creation of AI-driven Digital Twin models in healthcare, integrating real-time patient monitoring, which accelerated clinical decision-making by 20% and reduced patient wait times.</li>
+                  
+                  <li>Guided 2 teams in designing Swarm AI solutions, integrating AI agents for automation, reducing manual processes by 70%, and enhancing decision-making speed and accuracy for business development.</li>
+                  
+                  <li>Enhanced Sakana AI's interface that supported molecular pharmacology, facilitating AI-driven in-silico experiments and improving analysis leveraging AlphaFold, resulting in 25% more efficient data processing.</li>
+                  
+                  <li>Pioneered a Proof of Technology (PoT) initiative leveraging quantum computing (VQE); accelerated biomedical interactions and personalized nutrition, which decreased simulation time by 70%.</li>
+                  
+                  <li>Drove the adoption of agile methodologies across two R&D teams, conducting training sessions and mentoring junior engineers, leading to a 30% increase in project delivery speed.</li>
+                  
+              </ul>
+          </div>
+          
+          <div class="card">
+              <h3>Software Engineer (R&D) </h3>
+              <p class="company-dates">Brazil(Remote)</p>
+              <p class="company-dates"> | May 2021 - Apr 2022</p>
+              <ul>
+                  
+                  <li>Delivered a low-code platform for AI agentic workflow development, empowering product teams to rapidly prototype and iterate on user interfaces, resulting in 50% faster time to market.</li>
+                  
+                  <li>Gantt-Style Workbench for Process Automation; Created an AI-driven project tracking system (similar to Jira) for business process automation and workload management.</li>
+                  
+                  <li>Designed and deployed a real-time coaching AI for customer service agents using STT/TTS and Whisper models, achieving a 95% accuracy rate in identifying areas for improvement.</li>
+                  
+                  <li>Pioneered data-driven decision models using knowledge graphs, processing unstructured data with a 99% data quality score, and business intelligence pipelines.</li>
+                  
+                  <li>Spearheaded the migration of legacy SAP and Oracle data and code, leveraging an automated migration tool into a custom no/low-code builder, which reduced migration time by 60%.</li>
+                  
+                  <li>Implemented machine teaching for a Latin America welfare housing project, incorporating job data and unstructured applicant information; minimizing manual efforts by 70% for first time loan applicants</li>
+                  
+              </ul>
+          </div>
+          
+          <div class="card">
+              <h3>Intern</h3>
+              <p class="company-dates">Brazil(Remote)</p>
+              <p class="company-dates"> | Oct 2020 - Apr 2021</p>
+              <ul>
+                  
+                  <li>Implemented machine teaching for a LatAm welfare housing project, incorporating job data and unstructured applicant information; minimizing manual efforts by 70% for first time loan applicants.</li>
+                  
+                  <li>SAP Business Logic Auditing; Conducted security analysis, identifying critical vulnerabilities in SAP business logic and assisting in remediation.</li>
+                  
+              </ul>
+          </div>
+          
+      </div>
+  </section>
+
+  <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="card-container">
+          
+          <div class="project-card">
+                <!-- <img src="" alt="Market Linked debentures (MLDs) asset value analysis Thumbnail" /> -->
+                <h3>Market Linked debentures (MLDs) asset value analysis</h3>
+                <p>Total asset return analysis for MLDs tracking NIFTY 50 vs government securities Indices vs fixed instruments based on central bank repo rate by leveraging data from NIFTY and custom datasets.</p>
+                <a href="https://github.com/tanishqnalloju/mld-analysis">
+                  <button class="view-project">View Project</button>
                 </a>
-            </div> <!-- end ss-go-top -->
-        </div> <!-- end s-footer__bottom -->
+          </div>
+          
+          <div class="project-card">
+                <!-- <img src="" alt="Sentiment Analysis on COVID Tweets Thumbnail" /> -->
+                <h3>Sentiment Analysis on COVID Tweets</h3>
+                <p>Prediction of fear factor of a tweet related to Covid-19. Leverages meta Transfer learning technique from general purpose sentiment analysis algorithms. Uses NLP techniques for processing tweets and regression algorithm to predict the sentiment.</p>
+                <a href="https://github.com/tanishqnalloju">
+                  <button class="view-project">View Project</button>
+                </a>
+          </div>
+          
+          <div class="project-card">
+                <!-- <img src="" alt="Mercedes Benz Greener Kaggle prediction competition Thumbnail" /> -->
+                <h3>Mercedes Benz Greener Kaggle prediction competition</h3>
+                <p>Predicting a bench test time during production using XGBoost after reducing dimensions with PCA.</p>
+                <a href="https://github.com/tanishqnalloju/Mercedes-BenzGreener">
+                  <button class="view-project">View Project</button>
+                </a>
+          </div>
+          
+          <div class="project-card">
+                <!-- <img src="" alt="Automobile Customer Service using AI agent Thumbnail" /> -->
+                <h3>Automobile Customer Service using AI agent</h3>
+                <p>A smart chat bot leveraging AI feedback algorithms to analyze automobile problems during a breakdown. Analyzes and improves customer experience by reducing time taken to resolution. Helps auto service units to deliver the right product at the right time to customer for higher on road success rate and assistance.</p>
+                <a href="https://github.com/tanishqnalloju">
+                  <button class="view-project">View Project</button>
+                </a>
+          </div>
+          
+      </div>
+  </section>
 
-    </footer> <!-- end s-footer -->
-
-
-    <!-- photoswipe background
-    ================================================== -->
-<!--
-    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
-
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-
-        </div>
-
-    </div> 
--->
-	<!-- end photoSwipe background -->
-
-
-    <!-- Java Script
-    ================================================== -->
-    <script src="./Scripts/jquery-3.2.1.min.js"></script>
-    <script src="./Scripts/plugins.js"></script>
-    <script src="./Scripts/main.js"></script>
-
-</body></html>
+  <section id="contact" class="section">
+      <h2>Contact</h2>
+      <a aria-label="Send Email">
+        <img
+          src="static/mail.svg"
+          alt="Mail Icon"
+          style="line-height: 1; color: var(--white); margin-bottom: 10px;"
+          width="32"
+          height="32"
+        />
+      </a>
+      <h3>Let's connect! Send me a mail</h3>
+      <!-- <p id="contact-message">Let's connect! Send me a mail</p> -->      
+      <form id="contactForm">
+          <input type="text" id="name" placeholder="Your Name" />
+          <input type="text" id="subject" placeholder="Subject" />
+          <textarea placeholder="Your Message" id="message"></textarea>
+          <button type="submit" class="contactButton" id="sendMessageBtn">Let's discuss!</button>      
+      </form>
+  </section>
+  
+  </body>
+</html>
