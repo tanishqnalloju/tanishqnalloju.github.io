@@ -1,19 +1,24 @@
 /**
  * Cloudflare Pages Function: POST /api/contact
  *
- * Secrets (Cloudflare dashboard → Settings → Variables and Secrets, or .dev.vars locally):
- *   RESEND_API_KEY  – Resend API key
- *   TO_EMAIL        – inbox that receives form submissions
- *   FROM_EMAIL      – optional; defaults to Resend test sender
+ * Delivers form submissions as a Telegram message (no Resend / Gmail SMTP).
+ *
+ * Secrets (Cloudflare dashboard → project → Settings → Variables and Secrets,
+ * or local .dev.vars):
+ *   TELEGRAM_BOT_TOKEN  – from @BotFather
+ *   TELEGRAM_CHAT_ID    – your chat id (user or group)
  *
  * Body JSON: { name, subject, message, replyTo? }
  * Response:  { ok: true } | { ok: false, error: string }
+ *
+ * Why Telegram (not personal Gmail from Workers)?
+ * Workers cannot open raw SMTP. Gmail needs OAuth/App Passwords + a relay.
+ * Telegram is a single HTTPS call — simple and free on Pages Functions.
  */
 
 interface Env {
-  RESEND_API_KEY: string;
-  TO_EMAIL: string;
-  FROM_EMAIL?: string;
+  TELEGRAM_BOT_TOKEN: string;
+  TELEGRAM_CHAT_ID: string;
 }
 
 interface ContactBody {
@@ -29,8 +34,6 @@ const LIMITS = {
   message: 5000,
   replyTo: 254,
 } as const;
-
-const DEFAULT_FROM = "Portfolio Contact <onboarding@resend.dev>";
 
 function json(data: unknown, status = 200): Response {
   return new Response(JSON.stringify(data), {
@@ -48,14 +51,21 @@ function asTrimmedString(value: unknown): string | null {
 }
 
 function isValidEmail(email: string): boolean {
-  // Practical check; not full RFC compliance.
   if (email.length > LIMITS.replyTo) return false;
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-/** Strip CR/LF so name/subject cannot inject extra email headers. */
-function sanitizeHeader(value: string): string {
+/** Strip CR/LF so fields cannot inject weird multi-line control chars. */
+function sanitizeOneLine(value: string): string {
   return value.replace(/[\r\n]+/g, " ").trim();
+}
+
+/** Escape text for Telegram HTML parse mode. */
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
 
 function validate(body: ContactBody):
@@ -96,11 +106,31 @@ function validate(body: ContactBody):
 
   return {
     ok: true,
-    name: sanitizeHeader(name),
-    subject: sanitizeHeader(subject),
+    name: sanitizeOneLine(name),
+    subject: sanitizeOneLine(subject),
     message,
     replyTo,
   };
+}
+
+function formatTelegramHtml(fields: {
+  name: string;
+  subject: string;
+  message: string;
+  replyTo?: string;
+}): string {
+  const lines = [
+    "<b>Portfolio contact</b>",
+    "",
+    `<b>Name:</b> ${escapeHtml(fields.name)}`,
+    fields.replyTo
+      ? `<b>Reply-to:</b> ${escapeHtml(fields.replyTo)}`
+      : null,
+    `<b>Subject:</b> ${escapeHtml(fields.subject)}`,
+    "",
+    escapeHtml(fields.message),
+  ].filter((line): line is string => line !== null);
+  return lines.join("\n");
 }
 
 export async function onRequestPost(context: {
@@ -109,7 +139,10 @@ export async function onRequestPost(context: {
 }): Promise<Response> {
   const { env, request } = context;
 
-  if (!env.RESEND_API_KEY || !env.TO_EMAIL) {
+  const token = env.TELEGRAM_BOT_TOKEN?.trim();
+  const chatId = env.TELEGRAM_CHAT_ID?.trim();
+
+  if (!token || !chatId) {
     return json(
       { ok: false, error: "Contact service is not configured." },
       503,
@@ -128,46 +161,43 @@ export async function onRequestPost(context: {
     return json({ ok: false, error: parsed.error }, 400);
   }
 
-  const { name, subject, message, replyTo } = parsed;
-  const from = (env.FROM_EMAIL && env.FROM_EMAIL.trim()) || DEFAULT_FROM;
+  const text = formatTelegramHtml(parsed);
+  const apiUrl = `https://api.telegram.org/bot${token}/sendMessage`;
 
-  const textLines = [
-    `Name: ${name}`,
-    replyTo ? `Reply-To: ${replyTo}` : null,
-    `Subject: ${subject}`,
-    "",
-    message,
-  ].filter((line): line is string => line !== null);
-
-  const payload: Record<string, unknown> = {
-    from,
-    to: [env.TO_EMAIL],
-    subject: `[Portfolio] ${subject}`,
-    text: textLines.join("\n"),
-  };
-  if (replyTo) {
-    payload.reply_to = replyTo;
-  }
-
-  let resendRes: Response;
+  let tgRes: Response;
   try {
-    resendRes = await fetch("https://api.resend.com/emails", {
+    tgRes = await fetch(apiUrl, {
       method: "POST",
-      headers: {
-        Authorization: `Bearer ${env.RESEND_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text,
+        parse_mode: "HTML",
+        disable_web_page_preview: true,
+      }),
     });
   } catch {
     return json(
-      { ok: false, error: "Failed to reach email provider." },
+      { ok: false, error: "Failed to reach notification service." },
       502,
     );
   }
 
-  if (!resendRes.ok) {
-    // Do not forward provider error bodies (may leak config).
+  if (!tgRes.ok) {
+    // Do not forward Telegram error bodies (may leak config).
+    return json(
+      { ok: false, error: "Could not send message. Try again later." },
+      502,
+    );
+  }
+
+  let tgJson: { ok?: boolean } = {};
+  try {
+    tgJson = (await tgRes.json()) as { ok?: boolean };
+  } catch {
+    /* ignore */
+  }
+  if (tgJson.ok === false) {
     return json(
       { ok: false, error: "Could not send message. Try again later." },
       502,
